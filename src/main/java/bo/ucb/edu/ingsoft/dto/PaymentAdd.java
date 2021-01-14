@@ -16,17 +16,21 @@ public class PaymentAdd {
     private String lastname;
 
 
-    //@NotNull
+
    //@Size(min = 1, max = 16, message = "About Me must be between 16 and 16 characters")
-    @Min(value = 1)
-    @Max(value = 5)
     //@Digits(fraction = 0, integer = 16, message ="msg2")
+    //@Pattern(regexp = "^3[47][0-9]{13}$")
+
+    //@Min(value = 16)
+    //@Max(value = 999)
+    @NotNull
     private Integer cardNumber;
 
 
    // @NotNull
    //@Size(min = 1, max = 3, message= "About Me must be between 16 and 16 characters")
-    private Integer securityCode;
+   @NotNull
+   private Integer securityCode;
 
 
     //@NotNull(message = "no puede estar vacio")

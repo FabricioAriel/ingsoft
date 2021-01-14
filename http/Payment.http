@@ -3,9 +3,9 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "firstname": "Fabricio",
+  "firstname": "Fabrichio",
   "lastname": "Perez",
-  "cardNumber": "1234",
-  "securityCode": "22",
+  "cardNumber": "46546546",
+  "securityCode": "646",
   "dateExpire": "2008-11-11"
 }
