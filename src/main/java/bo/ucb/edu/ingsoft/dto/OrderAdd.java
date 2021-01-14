@@ -1,12 +1,10 @@
 package bo.ucb.edu.ingsoft.dto;
 
-import org.springframework.stereotype.Service;
-
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import java.util.Date;
 
-@Service
-public class OrderAddress {
-    @NotEmpty(message = "el campo no debe estar vacio")
+public class OrderAdd {
     private Integer neighbourId;
     @NotEmpty(message = "el campo no debe estar vacio")
     private String street;
@@ -14,7 +12,13 @@ public class OrderAddress {
     private String number;
     @NotEmpty(message = "el campo no debe estar vacio")
     private String reference;
-    public OrderAddress(){
+    @NotNull(message = "el campo no debe estar vacio")
+    private Integer cartId;
+    @NotNull(message = "el campo no debe estar vacio")
+    private Integer status;
+    @NotNull(message = "el campo no debe estar vacio")
+    private Integer state;
+    public OrderAdd(){
 
     }
 
@@ -50,13 +54,40 @@ public class OrderAddress {
         this.reference = reference;
     }
 
+    public Integer getCartId() {
+        return cartId;
+    }
+
+    public void setCartId(Integer cartId) {
+        this.cartId = cartId;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    public Integer getState() {
+        return state;
+    }
+
+    public void setState(Integer state) {
+        this.state = state;
+    }
+
     @Override
     public String toString() {
-        return "OrderAddress{" +
+        return "OrderAdd{" +
                 "neighbourId=" + neighbourId +
                 ", street='" + street + '\'' +
                 ", number='" + number + '\'' +
                 ", reference='" + reference + '\'' +
+                ", cartId=" + cartId +
+                ", status=" + status +
+                ", state=" + state +
                 '}';
     }
 }

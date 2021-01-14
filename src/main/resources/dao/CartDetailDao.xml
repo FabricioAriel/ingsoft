@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="bo.ucb.edu.ingsoft.dao.CartDetailDao">
+<mapper namespace="bo.ucb.edu.ingsoft.dao.CartDao">
 
     <insert id="createCartDetail" parameterType="bo.ucb.edu.ingsoft.model.CartDetail">
         INSERT INTO cart_detail VALUES (null, #{cart_id}, #{product_id}, #{qtty},
