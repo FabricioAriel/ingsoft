@@ -7,5 +7,5 @@ Content-Type: application/json
   "lastname": "Perez",
   "cardNumber": "48485698",
   "securityCode": "222",
-  "dateExpire": "838:59:59"
+  "dateExpire": "2008-11-11"
 }

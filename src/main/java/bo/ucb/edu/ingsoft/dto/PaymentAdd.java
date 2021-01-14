@@ -8,7 +8,7 @@ public class PaymentAdd {
     private String lastname;
     private Integer cardNumber;
     private Integer securityCode;
-    private Time dateExpire;
+    private Date dateExpire;
 
     public PaymentAdd() {
     }
@@ -49,7 +49,7 @@ public class PaymentAdd {
         return dateExpire;
     }
 
-    public void setDateExpire(Time dateExpire) {
+    public void setDateExpire(Date dateExpire) {
         this.dateExpire = dateExpire;
     }
 
