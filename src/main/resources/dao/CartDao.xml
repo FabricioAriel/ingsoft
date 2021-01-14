@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bo.ucb.edu.ingsoft.dao.CartDao">
+
+    <insert id="createCartDetail" parameterType="bo.ucb.edu.ingsoft.model.CartDetail">
+        INSERT INTO cart_detail VALUES (null, #{cartId}, #{productId}, #{qtty},
+                                        1, #{txId}, #{txHost}, #{txUserId}, #{txDate})
+    </insert>
+
+    <select id="getCart" parameterType="int" resultType="bo.ucb.edu.ingsoft.dto.CartGet">
+        SELECT
+            a.cart_id as cartId,
+            a.total as total,
+            a.is_active as isActive
+        FROM cart a
+        WHERE  a.is_active=1
+
+    </select>
+    <select id="getCartDetail" resultType="bo.ucb.edu.ingsoft.dto.CartGetDetail">
+        SELECT
+            b.cart_detail_id as cartDetailId,
+            a.price as price,
+            a.image as image,
+            a.product_name as productName,
+            a.model as model,
+            b.qtty as qtty
+        FROM product a, cart_detail b, cart c
+        WHERE  b.cart_id=c.cart_id AND c.is_active=1 AND b.product_id=a.product_id AND b.tx_status=1
+
+
+    </select>
+    <insert id="createCart" parameterType="bo.ucb.edu.ingsoft.model.Cart">
+        INSERT INTO cart
+        VALUES (
+                   null, 1, 0,
+                   1, #{txId},#{txHost}, #{txUserId}, #{txDate}
+               )
+    </insert>
+    <update id="deleteCartDetail" parameterType="int" >
+        DELETE  FROM cart_detail
+        WHERE cart_detail_id = #{cartDetailId}
+
+    </update>
+</mapper>
