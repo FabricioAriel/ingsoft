@@ -1,13 +1,23 @@
 package bo.ucb.edu.ingsoft.dto;
 
-import java.sql.Time;
 import java.util.Date;
+import javax.validation.constraints.*;
+
 
 public class PaymentAdd {
+    @NotBlank(message = "Firstname is mandatory")
     private String firstname;
+    @NotBlank(message = "Lastname is mandatory")
     private String lastname;
+    @NotBlank(message = "Cardnumber is mandatory")
+    @Size(min = 16, max = 16, message
+            = "About Me must be between 16 and 16 characters")
     private Integer cardNumber;
+    @NotBlank(message = "Securitycode is mandatory")
+    @Size(min = 3, max = 3, message
+            = "About Me must be between 16 and 16 characters")
     private Integer securityCode;
+    @NotNull(message = "no puede estar vacio")
     private Date dateExpire;
 
     public PaymentAdd() {
