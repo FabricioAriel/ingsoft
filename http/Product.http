@@ -4,7 +4,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "productName": "Laptop Alienware M15",
+  "productName": "",
   "detail": "procesador i7 8750k",
   "model": "M 15",
   "price": 12500.5,

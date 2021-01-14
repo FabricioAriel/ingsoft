@@ -2,10 +2,12 @@ package bo.ucb.edu.ingsoft.model;
 
 import org.springframework.stereotype.Service;
 
+import javax.validation.constraints.NotBlank;
 import java.util.Date;
 @Service
 public class Payment {
     private Integer paymentId;
+    @NotBlank(message = "Firstname is mandatory")
     private String firstname;
     private String lastname;
     private Integer cardNumber;

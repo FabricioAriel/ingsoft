@@ -12,9 +12,11 @@ import bo.ucb.edu.ingsoft.model.Tag;
 import bo.ucb.edu.ingsoft.util.TransactionUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping(value = "/payment")
@@ -30,7 +32,7 @@ public class PaymentApi {
 
     @RequestMapping( method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes= MediaType.APPLICATION_JSON_VALUE)
     @CrossOrigin(origins = "http://localhost:4200")
-    public PaymentAdd createPayment(@RequestBody PaymentAdd paymentAdd, HttpServletRequest request){
+    public PaymentAdd createPayment(@Valid @RequestBody  PaymentAdd paymentAdd, HttpServletRequest request){
         Transaction transaction = TransactionUtil.createTransaction(request);
 
         transactionBl.createTransaction(transaction);

@@ -1,23 +1,35 @@
 package bo.ucb.edu.ingsoft.dto;
 
+import org.springframework.stereotype.Service;
+
 import java.util.Date;
 import javax.validation.constraints.*;
+import javax.validation.constraints.NotBlank;
 
-
+@Service
 public class PaymentAdd {
     @NotBlank(message = "Firstname is mandatory")
     private String firstname;
+
+
     @NotBlank(message = "Lastname is mandatory")
     private String lastname;
-    @NotBlank(message = "Cardnumber is mandatory")
-    @Size(min = 16, max = 16, message
-            = "About Me must be between 16 and 16 characters")
+
+
+    //@NotNull
+   //@Size(min = 1, max = 16, message = "About Me must be between 16 and 16 characters")
+    @Min(value = 1)
+    @Max(value = 5)
+    //@Digits(fraction = 0, integer = 16, message ="msg2")
     private Integer cardNumber;
-    @NotBlank(message = "Securitycode is mandatory")
-    @Size(min = 3, max = 3, message
-            = "About Me must be between 16 and 16 characters")
+
+
+   // @NotNull
+   //@Size(min = 1, max = 3, message= "About Me must be between 16 and 16 characters")
     private Integer securityCode;
-    @NotNull(message = "no puede estar vacio")
+
+
+    //@NotNull(message = "no puede estar vacio")
     private Date dateExpire;
 
     public PaymentAdd() {

@@ -1,9 +1,11 @@
 package bo.ucb.edu.ingsoft.dto;
 
+import javax.validation.constraints.NotBlank;
 import java.math.BigDecimal;
 
 public class ProductAdd {
     private Integer brandId;
+    @NotBlank(message = "ProductName is mandatory")
     private String productName;
     private Integer tagId;
     private String detail;

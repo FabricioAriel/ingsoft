@@ -2,10 +2,13 @@ package bo.ucb.edu.ingsoft.dto;
 
 import org.springframework.stereotype.Service;
 
+import javax.validation.constraints.NotBlank;
+
 @Service
 public class UserCreate {
-
+    @NotBlank(message = "Firstname is mandatory")
     private String firstname;
+
     private String lastname;
     private String phone;
     private String email;
